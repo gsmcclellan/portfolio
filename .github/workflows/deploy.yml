@@ -1,11 +1,11 @@
 ﻿# Copy this file to .github/workflows/deploy.yml in your Astro repo.
-# It builds the Astro site and publishes it to GitHub Pages on every push to main.
+# It builds the Astro site and publishes it to GitHub Pages on every push to master.
 
 name: Deploy Astro site to Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
