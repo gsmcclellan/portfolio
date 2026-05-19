@@ -1,0 +1,163 @@
+---
+// Personal projects. Replace these placeholders with your own work.
+// Set `github` or `live` to '' to hide that link on a card.
+const projects = [
+  {
+    name: 'Goblinos Tactics',
+    description:
+      'A turn-based tactics game with roguelite elements — built in Godot 4 / C#.',
+    tags: ['C#', 'Godot', 'Video Game Development'],
+    github: 'https://github.com/gsmcclellan/goblinos_tactics',
+    live: '',
+  }//,
+  // {
+  //   name: 'Project Name',
+  //   description:
+  //     'A second placeholder. Side projects, OSS contributions, internal tools, or experiments all work well here.',
+  //   tags: ['Tech', 'Stack'],
+  //   github: '',
+  //   live: '',
+  // },
+  // {
+  //   name: 'Project Name',
+  //   description:
+  //     'A third placeholder. Delete cards you don’t need or duplicate this one for more.',
+  //   tags: ['Tech', 'Stack'],
+  //   github: '',
+  //   live: '',
+  // },
+];
+---
+
+<section id="projects">
+  <div class="inner">
+    <h2>Projects</h2>
+    <div class="project-list">
+      {
+        projects.map((p) => (
+          <div class="project-card">
+            <div class="project-header">
+              <h3>{p.name}</h3>
+              <div class="project-links">
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noopener">
+                    GitHub
+                  </a>
+                )}
+                {p.live && (
+                  <a href={p.live} target="_blank" rel="noopener">
+                    Live ↗
+                  </a>
+                )}
+              </div>
+            </div>
+            <p class="project-desc">{p.description}</p>
+            <ul class="tags">
+              {p.tags.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    border-top: 1px solid var(--color-border);
+    padding: var(--section-gap) 0;
+  }
+
+  .inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    padding-top: 0.25rem;
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: border-color 0.15s;
+  }
+
+  .project-card:hover {
+    border-color: #bbb;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .project-links a {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  .project-links a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags li {
+    font-size: 0.78rem;
+    background: #f4f4f4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 600px) {
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

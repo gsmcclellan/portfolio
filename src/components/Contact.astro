@@ -1,0 +1,147 @@
+---
+const links = [
+  {
+    label: 'Email',
+    href: 'mailto:gsmcclellan@gmail.com',
+    display: 'gsmcclellan@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/gsmcclellan',
+    display: 'github.com/gsmcclellan',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/gsmcclellan',
+    display: 'linkedin.com/in/gsmcclellan',
+  },
+  {
+    label: 'Location',
+    href: '',
+    display: 'Berkeley, CA',
+  },
+];
+---
+
+<section id="contact">
+  <div class="inner">
+    <h2>Contact</h2>
+    <div class="content">
+      <p>
+        I'm actively looking for my next role. If you'd like to work together or
+        just say hello, reach out via any of the links below.
+      </p>
+      <ul class="link-list">
+        {
+          links.map((link) => (
+            <li>
+              <span class="link-label">{link.label}</span>
+              {link.href ? (
+                <a href={link.href} target="_blank" rel="noopener">
+                  {link.display}
+                </a>
+              ) : (
+                <span class="link-plain">{link.display}</span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.</p>
+  </div>
+</footer>
+
+<style>
+  section {
+    border-top: 1px solid var(--color-border);
+    padding: var(--section-gap) 0;
+  }
+
+  .inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    padding-top: 0.25rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .content > p {
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
+
+  .link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .link-label {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .link-list a {
+    font-size: 0.95rem;
+  }
+
+  .link-plain {
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .footer-inner p {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 600px) {
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

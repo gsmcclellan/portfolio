@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import WorkHistory from '../components/WorkHistory.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout
+  title="Greg McClellan — Senior Software Engineer"
+  description="Senior full-stack engineer with 10+ years building production financial web applications. Specializing in data modeling, API design, and long-lived system architecture."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <About />
+    <WorkHistory />
+    <Projects />
+    <Skills />
+    <Contact />
+  </main>
+</Layout>
